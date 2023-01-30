@@ -1,0 +1,22 @@
+<mat-form-field class="example-form-field">
+  <mat-label>Id de video</mat-label>
+  <input matInput type="text" [(ngModel)]="value">
+  <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=0">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+
+<button mat-raised-button color="primary" (click)="sendNumber()">Envoyer le nombre</button>
+
+<mat-progress-bar mode="determinate" value="{{progress}}"></mat-progress-bar>
+{{progress}}%
+<div *ngIf="getted===99">
+  Nous avons récupéré toutes les données, maintenant nous les stockons durablement
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="getted===100">
+  Telechargement terminé :)
+</div>
+<div *ngIf="getted===-1">
+  Cette vidéo est déjà téléchargée, pas besoin de le refaire ;)
+</div>
